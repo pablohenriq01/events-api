@@ -2,10 +2,7 @@ package com.github.pablohenriqq1.events_api.models;
 
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,7 +16,9 @@ import java.util.UUID;
 @AllArgsConstructor
 @Entity
 @Table(name = "tb_coupons")
-public class Coupons {
+public class Coupon {
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String name;
     private double discount;
