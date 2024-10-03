@@ -21,9 +21,11 @@ public class Event {
     private UUID id;
     private String name;
     private Date date;
+    @JoinColumn(name = "fk_event")
+    @ManyToOne
     private Address address;
-    @JoinColumn(name = "fk_coupon")
-    @OneToMany
+    @JoinColumn(name = "id_coupon")
+    @OneToOne
     private Coupon Coupon;
     private Boolean activate;
 }

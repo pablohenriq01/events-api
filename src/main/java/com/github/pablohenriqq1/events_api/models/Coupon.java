@@ -20,9 +20,9 @@ public class Coupon {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    private String name;
+    private String code;
     private double discount;
-    @JoinColumn(name = "fk_event")
+    @JoinColumn(name = "id_event")
     @ManyToOne
     private Event event;
 
