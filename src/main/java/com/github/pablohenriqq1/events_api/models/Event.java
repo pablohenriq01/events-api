@@ -21,6 +21,7 @@ public class Event {
     private UUID id;
     private String name;
     private Date date;
+    private Address address;
     @JoinColumn(name = "fk_coupon")
     @OneToMany
     private Coupon Coupon;
