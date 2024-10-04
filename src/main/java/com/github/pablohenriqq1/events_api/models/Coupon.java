@@ -3,6 +3,7 @@ package com.github.pablohenriqq1.events_api.models;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,7 +21,9 @@ public class Coupon {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+    @NotNull
     private String code;
+    @NotNull
     private double discount;
     @JoinColumn(name = "id_event")
     @ManyToOne

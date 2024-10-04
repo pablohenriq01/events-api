@@ -1,28 +1,27 @@
 package com.github.pablohenriqq1.events_api.controllers;
 
-import com.github.pablohenriqq1.events_api.dto.AddressDTO;
-import com.github.pablohenriqq1.events_api.services.AddressService;
+import com.github.pablohenriqq1.events_api.dto.EventDTO;
+import com.github.pablohenriqq1.events_api.services.EventService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping("/address")
-public class AddressController {
+@Controller
+@RequestMapping("/event")
+public class EventController {
 
     @Autowired
-    private AddressService addressService;
+    private EventService eventService;
 
     @PostMapping
-    public ResponseEntity<Void> createAddress(@Valid @RequestBody AddressDTO addressDTO){
-        addressService.registerAddress(addressDTO);
+    public ResponseEntity<Void> createEvent(@Valid @RequestBody EventDTO eventDTO){
+        eventService.registerEvent(eventDTO);
 
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
-
 }
