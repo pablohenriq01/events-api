@@ -26,7 +26,7 @@ public class Coupon {
     @NotNull
     private double discount;
     @JoinColumn(name = "id_event")
-    @ManyToOne
+    @OneToOne
     private Event event;
 
 }
