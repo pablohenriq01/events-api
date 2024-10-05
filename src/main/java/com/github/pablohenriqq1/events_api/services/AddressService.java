@@ -22,4 +22,8 @@ public class AddressService {
         addressRepository.save(address);
     }
 
+    public Address findByID(Long id) {
+        return addressRepository.findById(id).get();
+    }
+
 }

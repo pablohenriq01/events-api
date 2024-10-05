@@ -19,8 +19,9 @@ public class EventService {
     public void registerEvent(EventDTO eventDTO){
         Event event = new Event();
         event.setName(eventDTO.name());
-        event.setDate(LocalDate.now());
+        event.setDate(eventDTO.date());
         event.setCoupon(null);
+        event.setAddress(null);
         event.setActivate(true);
 
         eventRepository.save(event);
@@ -29,4 +30,6 @@ public class EventService {
     public Event findByID(UUID uuid){
         return eventRepository.findById(uuid).get();
     }
+
+
 }
