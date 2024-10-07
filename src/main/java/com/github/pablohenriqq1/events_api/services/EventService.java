@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
 
 
@@ -31,5 +32,8 @@ public class EventService {
         return eventRepository.findById(uuid).get();
     }
 
+    public List<Event> getAllEvents (){
+        return eventRepository.findAll();
+    }
 
 }
