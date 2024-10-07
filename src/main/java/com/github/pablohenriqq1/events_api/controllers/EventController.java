@@ -31,4 +31,10 @@ public class EventController {
         return ResponseEntity.ok(events);
     }
 
+    @GetMapping("/{name}")
+    public ResponseEntity<List<Event>> getEventbyName(@RequestBody @PathVariable("name") String name){
+        List<Event> nameEvent = eventService.findByName(name);
+        return ResponseEntity.ok(nameEvent);
+    }
+
 }

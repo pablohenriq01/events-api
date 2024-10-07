@@ -1,10 +1,12 @@
 package com.github.pablohenriqq1.events_api.services;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.github.pablohenriqq1.events_api.dto.EventDTO;
 import com.github.pablohenriqq1.events_api.models.Event;
 import com.github.pablohenriqq1.events_api.repositories.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -32,8 +34,14 @@ public class EventService {
         return eventRepository.findById(uuid).get();
     }
 
+    public List<Event> findByName(String name) {
+        return eventRepository.findByName(name);
+    }
+
     public List<Event> getAllEvents (){
         return eventRepository.findAll();
     }
+
+
 
 }
